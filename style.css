@@ -1,16 +1,4 @@
 /* Nav link hover animations */
-
-li.dj-nav-bar__item:after {
-    left: -10px;
-    top: 12px;
-    z-index: -1;
-    border-radius: 6px;
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    content: "";
-}
-
 li.dj-nav-bar__item:before {
     left: -10px;
     top: 12px;
@@ -18,7 +6,7 @@ li.dj-nav-bar__item:before {
     border-radius: 6px;
     position: absolute;
     height: 40px;
-    width: 40px;
+    width: 12px;
     transition: width 0s;
     content: "";
 }
@@ -26,23 +14,6 @@ li.dj-nav-bar__item:before {
 li.dj-nav-bar__item:hover:before {
     transition: width .3s;
     width: calc(100% + 20px);
-}
-
-
-.dj-nav-bar__item:nth-of-type(4n-3):hover:after {
-    background-color: #D2E3FC;
-}
-
-.dj-nav-bar__item:nth-of-type(4n-2):hover:after {
-    background-color: #FAD2CF;
-}
-
-.dj-nav-bar__item:nth-of-type(4n-1):hover:after {
-    background-color: #FEEFC3;
-}
-
-.dj-nav-bar__item:nth-of-type(4n):hover:after {
-    background-color: #CEEAD6;
 }
 
 .dj-nav-bar__item:nth-of-type(4n-3):hover:before {
@@ -61,10 +32,10 @@ li.dj-nav-bar__item:hover:before {
     background-color: #CEEAD6;
 }
 
-
 /* Hero */
 .dj-masthead__wrapper {
-    min-height: 200px;
+    min-height: auto;
+    height: 250px;
 }
 
 .dj-masthead::before {
@@ -73,12 +44,13 @@ li.dj-nav-bar__item:hover:before {
 }
 
 .dj-masthead--picture {
+    /* If masthead content was placed outside(after) the masthead wrapper, background-size would be simpler: auto 100% for desktop and mobile */
     background-size: auto calc(100% - 48px);
     background-position: 50% 0%;
 }
 
 .dj-masthead__title {
-    /* Title will be in image */
+    /* Or use screenreader-only class if avaiable. Title will be in image.  */
     display: none;
 }
 
@@ -86,17 +58,21 @@ li.dj-nav-bar__item:hover:before {
     justify-content: center;
     color: #414141;
     font-size: 18px;
+    font-weight: 300;
 }
 
 .dj-masthead__widget svg {
+    /* no widget icons */
     display: none;
 }
 
 @media (max-width: 500px) {
-    .dj-masthead--picture {
-        background-size: auto calc(100% - 72px);
+    .dj-masthead__wrapper {
+        height: 250px
     }
-
+    .dj-masthead--picture {
+        background-size: auto calc(100% - 96px);
+    }
     .dj-masthead__widgets {
         font-size: 14px;
     }
@@ -237,10 +213,16 @@ li.dj-nav-bar__item:hover:before {
 }
 
 @media (max-width: 500px) {
-    .custom-card:first-child{
-        margin-bottom: 30px;
-    }
     .custom-card {
         max-width: none;
     }
+    .custom-card:first-child{
+        margin: 0 0 30px 0;
+    }
+    .custom-card:last-child{
+        /* Since 4 cards are split across 2 2-column sections, remove spacing caused by dj-section--bottom-padding-small */
+        margin: 0 0 -30px 0;
+    }
+  
+  
 }
