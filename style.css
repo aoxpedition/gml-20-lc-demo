@@ -1,0 +1,242 @@
+/* Nav link hover animations */
+
+li.dj-nav-bar__item:after {
+    left: -10px;
+    top: 12px;
+    z-index: -1;
+    border-radius: 6px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    content: "";
+}
+
+li.dj-nav-bar__item:before {
+    left: -10px;
+    top: 12px;
+    z-index: -2;
+    border-radius: 6px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    transition: width 0s;
+    content: "";
+}
+
+li.dj-nav-bar__item:hover:before {
+    transition: width .3s;
+    width: calc(100% + 20px);
+}
+
+
+.dj-nav-bar__item:nth-of-type(4n-3):hover:after {
+    background-color: #D2E3FC;
+}
+
+.dj-nav-bar__item:nth-of-type(4n-2):hover:after {
+    background-color: #FAD2CF;
+}
+
+.dj-nav-bar__item:nth-of-type(4n-1):hover:after {
+    background-color: #FEEFC3;
+}
+
+.dj-nav-bar__item:nth-of-type(4n):hover:after {
+    background-color: #CEEAD6;
+}
+
+.dj-nav-bar__item:nth-of-type(4n-3):hover:before {
+    background-color: #D2E3FC;
+}
+
+.dj-nav-bar__item:nth-of-type(4n-2):hover:before {
+    background-color: #FAD2CF;
+}
+
+.dj-nav-bar__item:nth-of-type(4n-1):hover:before {
+    background-color: #FEEFC3;
+}
+
+.dj-nav-bar__item:nth-of-type(4n):hover:before {
+    background-color: #CEEAD6;
+}
+
+
+/* Hero */
+.dj-masthead__wrapper {
+    min-height: 200px;
+}
+
+.dj-masthead::before {
+    /* no gradient overlay */
+    background-image: none !important;
+}
+
+.dj-masthead--picture {
+    background-size: auto calc(100% - 48px);
+    background-position: 50% 0%;
+}
+
+.dj-masthead__title {
+    /* Title will be in image */
+    display: none;
+}
+
+.dj-masthead__widgets {
+    justify-content: center;
+    color: #414141;
+    font-size: 18px;
+}
+
+.dj-masthead__widget svg {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .dj-masthead--picture {
+        background-size: auto calc(100% - 72px);
+    }
+
+    .dj-masthead__widgets {
+        font-size: 14px;
+    }
+
+}
+
+/* Carousel.  */
+.custom-carousel img {
+    border-radius: 14px;
+}
+
+/* Register Button. can be applied to all buttons */
+.dj-button {
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-family: "Google Sans", "Roboto", sans-serif;
+}
+
+/* Speaker cards */
+.dj-speaker-card {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width: calc(33% - 24px)
+}
+
+.dj-speaker-card:before {
+    display: none;
+}
+
+.dj-speaker-card:after {
+    display: none;
+}
+
+.dj-speaker-card__image-wrp {
+    padding-bottom: 33%;
+    width: 33%;
+    border: none;
+    border-radius: 50%;
+    flex-basis: 33%;
+    filter: grayscale(1);
+    position: relative;
+    overflow: visible;
+}
+
+.dj-speaker-card__info {
+    flex: 0 0 66%;
+    padding: 0 0 0 12px;
+}
+
+.dj-speaker-card__name {
+    color: #414141;
+}
+
+.speaker-shadow {
+    /* Additional div.speaker-shadow element added after each div.dj-speaker-card__image-wrp */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 33%;
+    border-radius: 50%;
+}
+
+.dj-speaker-card:nth-of-type(4n-3) .speaker-shadow {
+    box-shadow: 4px 4px 0 #4285f4;
+}
+
+.dj-speaker-card:nth-of-type(4n-2) .speaker-shadow {
+    box-shadow: 4px 4px 0 #ea4235;
+}
+
+.dj-speaker-card:nth-of-type(4n-1) .speaker-shadow {
+    box-shadow: 4px 4px 0 #fbbc04;
+}
+
+.dj-speaker-card:nth-of-type(4n) .speaker-shadow {
+    box-shadow: 4px 4px 0 #34a853;
+}
+
+@media (max-width: 500px) {
+    .dj-speaker-card {
+        width: 100%;
+    }
+}
+
+/* Custom cards */
+.custom-card {
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 33%;
+}
+.custom-card:first-child {
+    margin-right: 30px;
+}
+.custom-card:last-child {
+    margin-left: 30px;
+}
+.custom-card .dj-eyebrow {
+    position: relative;
+    font-size: 24px;
+    margin-left: 16px;
+    font-weight: 500;
+}
+
+.custom-card .dj-eyebrow:before {
+    position: absolute;
+    top: -.5em;
+    left: -1em;
+    z-index: -1;
+    content: "";
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+}
+
+.dj-section:nth-of-type(2n) .custom-card:nth-of-type(2n-1) .dj-eyebrow:before {
+    background-color: #4285f4;
+}
+
+.dj-section:nth-of-type(2n) .custom-card:nth-of-type(2n) .dj-eyebrow:before {
+    background-color: #ea4235;
+}
+
+.dj-section:nth-of-type(2n-1) .custom-card:nth-of-type(2n-1) .dj-eyebrow:before {
+    background-color: #fbbc04;
+}
+
+.dj-section:nth-of-type(2n-1) .custom-card:nth-of-type(2n) .dj-eyebrow:before {
+    background-color: #34a853;
+}
+
+@media (max-width: 500px) {
+    .custom-card:first-child{
+        margin-bottom: 30px;
+    }
+    .custom-card {
+        max-width: none;
+    }
+}
