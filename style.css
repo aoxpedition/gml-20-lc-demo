@@ -186,6 +186,10 @@ li.dj-nav-bar__item:hover:before {
 }
 
 /* Custom cards */
+.multi-column{
+    justify-content: center;
+}
+
 .custom-card {
     border: 1px solid #eeeeee;
     border-radius: 8px;
