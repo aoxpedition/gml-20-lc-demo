@@ -74,7 +74,7 @@ li.dj-nav-bar__item:hover:before {
     display: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .dj-masthead__wrapper {
         min-height: 250px;
     }
@@ -109,7 +109,7 @@ li.dj-nav-bar__item:hover:before {
     display: flex;
     align-items: center;
     padding: 0;
-    width: calc(33% - 24px)
+    min-width: 275px;
 }
 
 .dj-speaker-card:before {
@@ -141,7 +141,7 @@ li.dj-nav-bar__item:hover:before {
 }
 
 .speaker-shadow {
-    /* Additional div.speaker-shadow element added after each div.dj-speaker-card__image-wrp */
+    /* Additional div.speaker-shadow sibling element added after each div.dj-speaker-card__image-wrp */
     position: absolute;
     top: 0;
     left: 0;
@@ -166,13 +166,29 @@ li.dj-nav-bar__item:hover:before {
     box-shadow: 4px 4px 0 #34a853;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .dj-speaker-card {
-        width: 100%;
+        width: calc(100% - 24.1px);
     }
 }
 
-/* Custom cards */
+@media (min-width: 601px){
+    .dj-speaker-card {
+        width: calc(50% - 24.1px);
+    }
+}
+/* 3 columns on laptop/larger */
+@media (min-width: 1024px){
+    .dj-speaker-card {
+        width: calc(33% - 24.1px);
+    }
+}
+
+
+/****************** 
+Custom cards
+Section does not need to be included in theme update. Following will be styled inline
+*******************/
 .multi-column{
     justify-content: center;
 }
@@ -223,7 +239,7 @@ li.dj-nav-bar__item:hover:before {
     background-color: #34a853;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .custom-card {
         max-width: none;
     }
